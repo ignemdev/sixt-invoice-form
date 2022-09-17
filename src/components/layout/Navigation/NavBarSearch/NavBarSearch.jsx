@@ -1,0 +1,51 @@
+import { useState } from 'react';
+import PropTypes from 'prop-types';
+
+import { Box, Flex, IconButton, Input } from '@chakra-ui/react';
+import { SearchIcon } from '@chakra-ui/icons';
+
+import { LabelsConstants } from '@utils/constants';
+
+export const NavBarSearch = ( { onSearchValueChange, onSearch } ) => {
+
+    const [ searchValue, setSearchValue ] = useState('')
+
+    const onSearchInputChange = ( { target } ) => {
+        //do something if user is typing
+        const value = target?.value;
+
+        setSearchValue(value)
+        onSearchValueChange(value)
+    };
+
+    const searchButtonHandler = () => {
+        //do something with searchValue
+        if (searchValue.length <= 0) return;
+
+        console.log(searchValue);
+        onSearch(searchValue)
+    }
+
+    return (
+        <Box flexGrow={ 0.5 }>
+            <Flex gap='2'>
+                <Input
+                    boxShadow='base'
+                    placeholder={ LabelsConstants.buscar }
+                    value={ searchValue }
+                    onChange={ onSearchInputChange }
+                />
+                <IconButton
+                    icon={ <SearchIcon/> }
+                    onClick={ searchButtonHandler }
+                    aria-label='navbar search'
+                />
+            </Flex>
+        </Box>
+    )
+}
+
+NavBarSearch.propTypes = {
+    onSearchValueChange: PropTypes.func.isRequired,
+    onSearch: PropTypes.func.isRequired,
+}
