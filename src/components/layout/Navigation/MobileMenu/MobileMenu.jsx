@@ -10,6 +10,10 @@ import {
     DrawerOverlay
 } from '@chakra-ui/react';
 
+import { LabelsConstants } from '@utils/constants';
+
+import { AppMenu } from '@components/layout/index.js';
+
 export const MobileMenu = ( { isOpen, onClose } ) => {
 
     return (
@@ -18,9 +22,9 @@ export const MobileMenu = ( { isOpen, onClose } ) => {
                 <DrawerOverlay/>
                 <DrawerContent>
                     <DrawerCloseButton/>
-                    <DrawerHeader borderBottomWidth='1px'>Basic Drawer</DrawerHeader>
+                    <DrawerHeader borderBottomWidth='1px'>{ LabelsConstants.menu }</DrawerHeader>
                     <DrawerBody>
-                        <span>Some contents...</span>
+                        <AppMenu onItemClick={ onClose }/>
                     </DrawerBody>
                 </DrawerContent>
             </Drawer>

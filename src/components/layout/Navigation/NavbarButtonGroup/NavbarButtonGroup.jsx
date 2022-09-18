@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import { Button, ButtonGroup } from '@chakra-ui/react';
+import { Button, ButtonGroup, IconButton } from '@chakra-ui/react';
 import { HamburgerIcon, SettingsIcon } from '@chakra-ui/icons';
 
 import { LabelsConstants, BreakpointsConstants } from '@utils/constants';
@@ -19,16 +19,15 @@ export const NavbarButtonGroup = ( { onMenuClick, onSettingsClick, isMobile } ) 
                 leftIcon={ <SettingsIcon/> }
                 onClick={ onSettingsClick }
             >
-                { LabelsConstants.settings }
+                { LabelsConstants.ajustes }
             </Button>
-            <Button
+            <IconButton
                 w={ BreakpointsConstants.alwaysFullWidth }
-                leftIcon={ <HamburgerIcon/> }
+                icon={ <HamburgerIcon/> }
                 onClick={ onMenuClick }
                 hidden={ !isMobile }
-            >
-                { LabelsConstants.menu }
-            </Button>
+                aria-label='mobile hamburguer'
+            />
         </ButtonGroup>
     )
 }

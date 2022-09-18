@@ -30,7 +30,7 @@ export const NavBar = ( { isMobile } ) => {
               alignItems='center'
               flexWrap='wrap'
         >
-            <Heading size='lg'>{ DomainConstants.productName }</Heading>
+            <Heading as='h1' size='lg'>{ DomainConstants.productName }</Heading>
 
             <NavBarSearch
                 onSearch={ searchHandler }
