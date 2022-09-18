@@ -1,20 +1,21 @@
-import { Box, useDisclosure } from '@chakra-ui/react';
+import { Box, Flex, useMediaQuery } from '@chakra-ui/react';
 
-import { NavBar, SideBar } from '@components/layout';
+import { NavBar, SideMenu, PageContainer } from '@components/layout';
+
+import { MediaQueriesConstants, SizesConstants } from '@utils/constants';
 
 const InvoiceFormApp = () => {
 
-    const { isOpen, onOpen, onClose } = useDisclosure();
+    const [ isMobile ] = useMediaQuery(MediaQueriesConstants.maxWidthLarge)
 
     return (
         <Box as='main'>
-            <NavBar onMenuClick={ onOpen }/>
+            <NavBar isMobile={ isMobile }/>
 
-            <SideBar isOpen={ isOpen } onClose={ onClose }/>
-
-            <Box as='section' bg={ 'gray.500' } m={ 6 }>
-                pages...
-            </Box>
+            <Flex as='section' h={ SizesConstants.remainingScreen }>
+                <SideMenu isMobile={ isMobile }/>
+                <PageContainer/>
+            </Flex>
         </Box>
     );
 }

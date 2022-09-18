@@ -5,7 +5,7 @@ import { HamburgerIcon, SettingsIcon } from '@chakra-ui/icons';
 
 import { LabelsConstants, BreakpointsConstants } from '@utils/constants';
 
-export const NavbarButtonGroup = ( { onMenuClick, onSettingsClick } ) => {
+export const NavbarButtonGroup = ( { onMenuClick, onSettingsClick, isMobile } ) => {
 
     return (
         <ButtonGroup
@@ -25,6 +25,7 @@ export const NavbarButtonGroup = ( { onMenuClick, onSettingsClick } ) => {
                 w={ BreakpointsConstants.alwaysFullWidth }
                 leftIcon={ <HamburgerIcon/> }
                 onClick={ onMenuClick }
+                hidden={ !isMobile }
             >
                 { LabelsConstants.menu }
             </Button>
@@ -34,10 +35,12 @@ export const NavbarButtonGroup = ( { onMenuClick, onSettingsClick } ) => {
 
 NavbarButtonGroup.propTypes = {
     onMenuClick: PropTypes.func.isRequired,
-    onSettingsClick: PropTypes.func.isRequired
+    onSettingsClick: PropTypes.func.isRequired,
+    isMobile: PropTypes.bool.isRequired
 }
 
 NavbarButtonGroup.defaultProps = {
     onMenuClick: () => console.log('menu click'),
-    onSettingsClick: () => console.log('settings click')
+    onSettingsClick: () => console.log('settings click'),
+    isMobile: false
 }

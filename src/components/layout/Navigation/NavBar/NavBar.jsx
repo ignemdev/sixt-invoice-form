@@ -1,28 +1,29 @@
-import { Flex, Heading } from '@chakra-ui/react';
+import PropTypes from 'prop-types';
+
+import { Flex, Heading, useDisclosure } from '@chakra-ui/react';
 
 import {
     NavBarSearch,
     NavbarButtonGroup,
-    NavBarUser
+    NavBarUser, MobileMenu
 } from '@components/layout';
 
 import { DomainConstants } from '@utils/constants';
 
-export const NavBar = ( { onMenuClick } ) => {
+export const NavBar = ( { isMobile } ) => {
+
+    const { isOpen, onOpen, onClose } = useDisclosure();
 
     const searchHandler = value => console.log(value);
     const searchValueHandler = value => console.log(value);
-    const menuClickHandler = () => onMenuClick()
 
     return (
         <Flex as='header'
-              boxShadow='sm'
               p='4'
               px='6'
               gap='5'
               alignItems='center'
               flexWrap='wrap'
-              justifyContent='center'
         >
             <Heading size='lg'>{ DomainConstants.productName }</Heading>
 
@@ -32,7 +33,18 @@ export const NavBar = ( { onMenuClick } ) => {
             />
 
             <NavBarUser/>
-            <NavbarButtonGroup onMenuClick={ menuClickHandler }/>
+
+            <NavbarButtonGroup onMenuClick={ onOpen } isMobile={ isMobile }/>
+
+            <MobileMenu isOpen={ isOpen } onClose={ onClose }/>
         </Flex>
     )
+}
+
+NavBar.propTypes = {
+    isMobile: PropTypes.bool.isRequired
+}
+
+NavBar.defaultProps = {
+    isMobile: false
 }

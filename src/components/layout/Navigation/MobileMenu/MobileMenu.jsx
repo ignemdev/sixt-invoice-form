@@ -10,10 +10,10 @@ import {
     DrawerOverlay
 } from '@chakra-ui/react';
 
-export const SideBar = ( { isOpen, onClose } ) => {
+export const MobileMenu = ( { isOpen, onClose } ) => {
 
     return (
-        <Box as='aside'>
+        <Box>
             <Drawer placement='right' onClose={ onClose } isOpen={ isOpen }>
                 <DrawerOverlay/>
                 <DrawerContent>
@@ -28,12 +28,12 @@ export const SideBar = ( { isOpen, onClose } ) => {
     )
 }
 
-SideBar.propTypes = {
+MobileMenu.propTypes = {
     isOpen: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired
 }
 
-SideBar.defaultProps = {
+MobileMenu.defaultProps = {
     isOpen: false,
     onClose: () => console.log('se cerro el sidebar')
 }

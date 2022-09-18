@@ -34,6 +34,7 @@ export const NavBarSearch = ( { onSearchValueChange, onSearch } ) => {
     return (
         <Flex gap='2' flex='fit-content'>
             <Input
+                border={ 0 }
                 boxShadow='base'
                 placeholder={ LabelsConstants.buscar }
                 value={ searchValue }
