@@ -14,7 +14,7 @@ import { LabelsConstants } from '@utils/constants';
 export const AppMenu = ( { onItemClick } ) => {
 
     return (
-        <List spacing={ 8 } cursor={ 'default' }>
+        <List spacing={ 8 } cursor='default'>
             <AppMenuSection title={ LabelsConstants.inicio } spacing={ 1 }>
                 <AppMenuItem
                     onClick={ onItemClick }

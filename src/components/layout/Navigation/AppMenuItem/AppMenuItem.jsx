@@ -11,7 +11,7 @@ export const AppMenuItem = ( { onClick, label, href, icon } ) => {
                 leftIcon={ icon }
                 size='sm'
                 justifyContent='left'
-                rounded='0'
+                rounded={ 0 }
                 as='a'
                 href={ href }
                 onClick={ onClick }>

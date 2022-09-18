@@ -8,7 +8,7 @@ export const SideMenu = ( { isMobile } ) => {
     return (
         <Box
             overflowY='auto'
-            p='6'
+            p={ 6 }
             hidden={ isMobile }
             as='aside'
             minWidth={ '250px' }

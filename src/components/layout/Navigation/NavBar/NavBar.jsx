@@ -24,9 +24,9 @@ export const NavBar = ( { isMobile } ) => {
 
     return (
         <Flex as='header'
-              p='4'
-              px='6'
-              gap='5'
+              p={ 4 }
+              px={ 6 }
+              gap={ 5 }
               alignItems='center'
               flexWrap='wrap'
         >
