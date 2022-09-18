@@ -40,7 +40,7 @@ NavbarButtonGroup.propTypes = {
 }
 
 NavbarButtonGroup.defaultProps = {
-    onMenuClick: () => console.log('menu click'),
-    onSettingsClick: () => console.log('settings click'),
+    onMenuClick: () => console.log('menu clicked from <NavbarButtonGroup/>'),
+    onSettingsClick: () => console.log('settings clicked from <NavbarButtonGroup/>'),
     isMobile: false
 }

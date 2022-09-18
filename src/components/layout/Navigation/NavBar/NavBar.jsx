@@ -1,11 +1,16 @@
 import PropTypes from 'prop-types';
 
-import { Flex, Heading, useDisclosure } from '@chakra-ui/react';
+import {
+    Flex,
+    Heading,
+    useDisclosure
+} from '@chakra-ui/react';
 
 import {
     NavBarSearch,
     NavbarButtonGroup,
-    NavBarUser, MobileMenu
+    NavBarUser,
+    MobileMenu
 } from '@components/layout';
 
 import { DomainConstants } from '@utils/constants';

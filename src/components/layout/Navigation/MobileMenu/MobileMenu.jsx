@@ -35,5 +35,5 @@ MobileMenu.propTypes = {
 
 MobileMenu.defaultProps = {
     isOpen: false,
-    onClose: () => console.log('se cerro el sidebar')
+    onClose: () => console.log('<MobileMenu/> closed')
 }

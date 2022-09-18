@@ -27,7 +27,7 @@ export const NavBarSearch = ( { onSearchValueChange, onSearch } ) => {
         //do something with searchValue
         if (searchValue.length <= 0) return;
 
-        console.log(searchValue);
+        console.log('<NavBarSearch/> value:', searchValue);
         onSearch(searchValue)
     }
 
@@ -55,6 +55,6 @@ NavBarSearch.propTypes = {
 }
 
 NavBarSearch.defaultProps = {
-    onSearchValueChange: () => console.log('search value chancged'),
-    onSearch: () => console.log('searching')
+    onSearchValueChange: () => console.log('<NavBarSearch/> value changed'),
+    onSearch: () => console.log('<NavBarSearch/> search button clicked')
 }

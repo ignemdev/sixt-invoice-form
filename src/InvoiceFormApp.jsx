@@ -1,6 +1,14 @@
-import { Box, Flex, useMediaQuery } from '@chakra-ui/react';
+import {
+    Box,
+    Flex,
+    useMediaQuery
+} from '@chakra-ui/react';
 
-import { NavBar, SideMenu, PageContainer } from '@components/layout';
+import {
+    NavBar,
+    SideMenu,
+    PageContainer
+} from '@components/layout';
 
 import { MediaQueriesConstants, SizesConstants } from '@utils/constants';
 
