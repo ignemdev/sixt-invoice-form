@@ -1,7 +1,6 @@
 import {
     Flex,
     Heading,
-    Spacer
 } from '@chakra-ui/react';
 
 import { NavBarSearch, NavbarButtonGroup, NavBarUser } from '@components/layout';
@@ -17,9 +16,11 @@ export const NavBar = () => {
         <Flex as='header'
               boxShadow='sm'
               p='4'
+              px='6'
               gap='5'
               alignItems='center'
-              justifyContent='space-around'
+              flexWrap='wrap'
+              justifyContent='center'
         >
             <Heading size='lg'>{ DomainConstants.productName }</Heading>
 
@@ -28,8 +29,8 @@ export const NavBar = () => {
                 onSearchValueChange={ searchValueHandler }
             />
 
-            <NavbarButtonGroup/>
             <NavBarUser/>
+            <NavbarButtonGroup/>
         </Flex>
     )
 }

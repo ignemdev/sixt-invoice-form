@@ -1,15 +1,20 @@
 import PropTypes from 'prop-types';
 
 import { Button, Menu, MenuButton, MenuGroup, MenuItem, MenuList } from '@chakra-ui/react';
-
-import { LabelsConstants } from '@utils/constants';
 import { ChevronDownIcon } from '@chakra-ui/icons';
+
+import { LabelsConstants, BreakpointsConstants } from '@utils/constants';
 
 export const NavBarUser = ( { username, userId } ) => {
 
     return (
-        <Menu>
-            <MenuButton as={ Button } colorScheme={ 'blue' } rightIcon={ <ChevronDownIcon/> }>
+        <Menu matchWidth={ true }>
+            <MenuButton
+                as={ Button }
+                colorScheme={ 'blue' }
+                rightIcon={ <ChevronDownIcon/> }
+                w={ BreakpointsConstants.alwaysFullWidth }
+            >
                 { username }
             </MenuButton>
             <MenuList>

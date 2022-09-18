@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { Box, Flex, IconButton, Input } from '@chakra-ui/react';
+import { Flex, IconButton, Input } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
 
 import { LabelsConstants } from '@utils/constants';
@@ -27,21 +27,19 @@ export const NavBarSearch = ( { onSearchValueChange, onSearch } ) => {
     }
 
     return (
-        <Box flexGrow={ 0.5 }>
-            <Flex gap='2'>
-                <Input
-                    boxShadow='base'
-                    placeholder={ LabelsConstants.buscar }
-                    value={ searchValue }
-                    onChange={ onSearchInputChange }
-                />
-                <IconButton
-                    icon={ <SearchIcon/> }
-                    onClick={ searchButtonHandler }
-                    aria-label='navbar search'
-                />
-            </Flex>
-        </Box>
+        <Flex gap='2' flex='fit-content'>
+            <Input
+                boxShadow='base'
+                placeholder={ LabelsConstants.buscar }
+                value={ searchValue }
+                onChange={ onSearchInputChange }
+            />
+            <IconButton
+                icon={ <SearchIcon/> }
+                onClick={ searchButtonHandler }
+                aria-label='navbar search'
+            />
+        </Flex>
     )
 }
 

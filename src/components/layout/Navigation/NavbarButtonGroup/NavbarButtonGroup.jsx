@@ -1,47 +1,43 @@
 import PropTypes from 'prop-types';
 
 import { Button, ButtonGroup } from '@chakra-ui/react';
-import { ChatIcon, HamburgerIcon, SettingsIcon } from '@chakra-ui/icons';
+import { HamburgerIcon, SettingsIcon } from '@chakra-ui/icons';
 
-import { LabelsConstants } from '@utils/constants';
+import { LabelsConstants, BreakpointsConstants } from '@utils/constants';
 
-export const NavbarButtonGroup = ( { onNotificationsClick, onMenuClick, onSettingsClick } ) => {
+export const NavbarButtonGroup = ( { onMenuClick, onSettingsClick } ) => {
 
     return (
-        <ButtonGroup gap='0.5' alignItems='center'>
+        <ButtonGroup
+            gap='0.5'
+            alignItems='center'
+            variant='ghost'
+            w={ BreakpointsConstants.alwaysFullWidth }
+        >
             <Button
-                variant='ghost'
-                leftIcon={ <ChatIcon/> }
-                onClick={ onNotificationsClick }
-            >
-                { LabelsConstants.notification }
-            </Button>
-            <Button
-                variant='ghost'
-                leftIcon={ <HamburgerIcon/> }
-                onClick={ onMenuClick }
-            >
-                { LabelsConstants.menu }
-            </Button>
-            <Button
-                variant='ghost'
+                w={ BreakpointsConstants.alwaysFullWidth }
                 leftIcon={ <SettingsIcon/> }
                 onClick={ onSettingsClick }
             >
                 { LabelsConstants.settings }
+            </Button>
+            <Button
+                w={ BreakpointsConstants.alwaysFullWidth }
+                leftIcon={ <HamburgerIcon/> }
+                onClick={ onMenuClick }
+            >
+                { LabelsConstants.menu }
             </Button>
         </ButtonGroup>
     )
 }
 
 NavbarButtonGroup.propTypes = {
-    onNotificationsClick: PropTypes.func.isRequired,
     onMenuClick: PropTypes.func.isRequired,
     onSettingsClick: PropTypes.func.isRequired
 }
 
 NavbarButtonGroup.defaultProps = {
-    onNotificationsClick: () => console.log('notificacion clicked'),
     onMenuClick: () => console.log('menu clicked'),
     onSettingsClick: () => console.log('ajustes clicked')
 }
