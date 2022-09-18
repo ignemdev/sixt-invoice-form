@@ -26,13 +26,13 @@ export const AppMenu = ( { onItemClick } ) => {
             <AppMenuSection title={ LabelsConstants.facturas } spacing={ 1 }>
                 <AppMenuItem
                     onClick={ onItemClick }
-                    href={ 'facturas/nueva' }
+                    href={ '/facturas/nueva' }
                     label={ LabelsConstants.nueva }
                     icon={ <Icon as={ AiOutlineFileAdd }/> }
                 />
                 <AppMenuItem
                     onClick={ onItemClick }
-                    href={ 'facturas/' }
+                    href={ '/facturas' }
                     label={ LabelsConstants.registro }
                     icon={ <Icon as={ TbFileInvoice }/> }
                 />
