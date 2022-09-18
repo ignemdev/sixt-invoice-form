@@ -1,6 +1,7 @@
 import { Button, ListItem } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 import { LinkIcon } from '@chakra-ui/icons';
+import { Link } from 'react-router-dom';
 
 export const AppMenuItem = ( { onClick, label, href, icon } ) => {
     return (
@@ -12,9 +13,9 @@ export const AppMenuItem = ( { onClick, label, href, icon } ) => {
                 size='sm'
                 justifyContent='left'
                 rounded={ 0 }
-                as='a'
-                href={ href }
-                onClick={ onClick }>
+                onClick={ onClick }
+                as={ Link }
+                to={ href }>
                 { label }
             </Button>
         </ListItem>

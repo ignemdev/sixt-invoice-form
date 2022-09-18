@@ -1,4 +1,7 @@
+import { Outlet } from 'react-router-dom';
+
 import { Box } from '@chakra-ui/react';
+
 import { BreakpointsConstants } from '@utils/constants/index.js';
 
 export const PageContainer = () => {
@@ -9,7 +12,7 @@ export const PageContainer = () => {
                 shadow='sm' p={ 6 }
                 rounded='md'
             >
-                Ludus nec penatibus imperdiet
+                <Outlet/>
             </Box>
         </Box>
     )

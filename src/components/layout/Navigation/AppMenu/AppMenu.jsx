@@ -18,7 +18,7 @@ export const AppMenu = ( { onItemClick } ) => {
             <AppMenuSection title={ LabelsConstants.inicio } spacing={ 1 }>
                 <AppMenuItem
                     onClick={ onItemClick }
-                    href={ '/dashboard' }
+                    href={ '/' }
                     label={ LabelsConstants.dashboard }
                     icon={ <Icon as={ MdDashboard }/> }
                 />
