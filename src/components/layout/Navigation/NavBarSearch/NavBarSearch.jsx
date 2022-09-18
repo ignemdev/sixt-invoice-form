@@ -50,5 +50,10 @@ export const NavBarSearch = ( { onSearchValueChange, onSearch } ) => {
 
 NavBarSearch.propTypes = {
     onSearchValueChange: PropTypes.func.isRequired,
-    onSearch: PropTypes.func.isRequired,
+    onSearch: PropTypes.func.isRequired
+}
+
+NavBarSearch.defaultProps = {
+    onSearchValueChange: () => console.log('search value chancged'),
+    onSearch: () => console.log('searching')
 }
