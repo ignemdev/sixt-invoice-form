@@ -1,16 +1,18 @@
-import {
-    Flex,
-    Heading,
-} from '@chakra-ui/react';
+import { Flex, Heading } from '@chakra-ui/react';
 
-import { NavBarSearch, NavbarButtonGroup, NavBarUser } from '@components/layout';
+import {
+    NavBarSearch,
+    NavbarButtonGroup,
+    NavBarUser
+} from '@components/layout';
 
 import { DomainConstants } from '@utils/constants';
 
-export const NavBar = () => {
+export const NavBar = ( { onMenuClick } ) => {
 
     const searchHandler = value => console.log(value);
     const searchValueHandler = value => console.log(value);
+    const menuClickHandler = () => onMenuClick()
 
     return (
         <Flex as='header'
@@ -30,7 +32,7 @@ export const NavBar = () => {
             />
 
             <NavBarUser/>
-            <NavbarButtonGroup/>
+            <NavbarButtonGroup onMenuClick={ menuClickHandler }/>
         </Flex>
     )
 }

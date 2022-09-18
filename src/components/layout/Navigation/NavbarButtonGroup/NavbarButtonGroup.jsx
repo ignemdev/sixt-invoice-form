@@ -34,10 +34,5 @@ export const NavbarButtonGroup = ( { onMenuClick, onSettingsClick } ) => {
 
 NavbarButtonGroup.propTypes = {
     onMenuClick: PropTypes.func.isRequired,
-    onSettingsClick: PropTypes.func.isRequired
-}
-
-NavbarButtonGroup.defaultProps = {
-    onMenuClick: () => console.log('menu clicked'),
-    onSettingsClick: () => console.log('ajustes clicked')
+    // onSettingsClick: PropTypes.func.isRequired
 }

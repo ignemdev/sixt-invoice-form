@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { Flex, IconButton, Input } from '@chakra-ui/react';
+import {
+    Flex,
+    IconButton,
+    Input
+} from '@chakra-ui/react';
+
 import { SearchIcon } from '@chakra-ui/icons';
 
 import { LabelsConstants } from '@utils/constants';

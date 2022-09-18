@@ -1,6 +1,14 @@
 import PropTypes from 'prop-types';
 
-import { Button, Menu, MenuButton, MenuGroup, MenuItem, MenuList } from '@chakra-ui/react';
+import {
+    Button,
+    Menu,
+    MenuButton,
+    MenuGroup,
+    MenuItem,
+    MenuList
+} from '@chakra-ui/react';
+
 import { ChevronDownIcon } from '@chakra-ui/icons';
 
 import { LabelsConstants, BreakpointsConstants } from '@utils/constants';

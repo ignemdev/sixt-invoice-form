@@ -4,9 +4,13 @@ import { NavBar, SideBar } from '@components/layout';
 
 const InvoiceFormApp = () => {
 
+    const menuClickHandler = () => {
+        console.log('d');
+    }
+
     return (
         <Box as='main'>
-            <NavBar/>
+            <NavBar onMenuClick={ menuClickHandler }/>
             <SideBar/>
         </Box>
     );
