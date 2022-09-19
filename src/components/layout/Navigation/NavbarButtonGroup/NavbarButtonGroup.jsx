@@ -10,7 +10,7 @@ export const NavbarButtonGroup = ( { onMenuClick, onSettingsClick, isMobile } ) 
     return (
         <ButtonGroup
             gap='0.5'
-            alignItems='center'
+            justifyContent='center'
             variant='ghost'
             w={ BreakpointsConstants.alwaysFullWidth }
         >
@@ -18,6 +18,7 @@ export const NavbarButtonGroup = ( { onMenuClick, onSettingsClick, isMobile } ) 
                 w={ BreakpointsConstants.alwaysFullWidth }
                 leftIcon={ <SettingsIcon/> }
                 onClick={ onSettingsClick }
+                width={ 'full' }
             >
                 { LabelsConstants.ajustes }
             </Button>
