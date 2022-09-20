@@ -1,44 +1,33 @@
+import { useMediaQuery } from '@chakra-ui/react';
+
+import { SectionContainer } from '@components/layout';
+import { StatCard, GraphCard } from '@components/cards';
+
 import {
-    Box,
-    Divider,
-    Flex,
-    Heading,
-    Stat,
-    StatArrow,
-    StatGroup,
-    StatHelpText,
-    StatLabel,
-    StatNumber
-} from '@chakra-ui/react';
+    LabelsConstants,
+    ChartTypes,
+    MediaQueriesConstants
+} from '@utils/constants';
 
 export const DashboardPage = () => {
+
+    const [ isMobile ] = useMediaQuery(MediaQueriesConstants.maxWidthLarge)
+
     return (
         <>
-            <Box>
-                <Flex
-                    gap={ 5 }
-                    flexWrap={ 'wrap' }
-                    justifyContent={ [ 'center', 'space-evenly', 'space-evenly', 'start' ] }
-                    alignItems={ 'start' }>
-                    <Heading as={ 'h5' } size={ 'sm' }>Dashboard</Heading>
-                    <Divider/>
-                    <Box
-                        shadow='md' p={ 6 }
-                        rounded='sm'
-                    >
-                        <StatGroup gap={ 6 }>
-                            <Stat>
-                                <StatLabel>Sent</StatLabel>
-                                <StatNumber>345,670</StatNumber>
-                                <StatHelpText>
-                                    <StatArrow type='increase'/>
-                                    23.36%
-                                </StatHelpText>
-                            </Stat>
-                        </StatGroup>
-                    </Box>
-                </Flex>
-            </Box>
+            <SectionContainer title={ LabelsConstants.estadisticas }>
+                <StatCard/>
+                <StatCard/>
+                <StatCard/>
+                <StatCard/>
+                <StatCard/>
+            </SectionContainer>
+            <SectionContainer title={ LabelsConstants.graficos } hidden={ isMobile }>
+                <GraphCard name='Barra' type={ ChartTypes.bar }/>
+                <GraphCard name='Donut' type={ ChartTypes.pie }/>
+                <GraphCard name='Donut' type={ ChartTypes.pie }/>
+                <GraphCard name='Donut' type={ ChartTypes.pie }/>
+            </SectionContainer>
         </>
     );
 }

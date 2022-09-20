@@ -1,16 +1,20 @@
 import { LabelsConstants } from './labels.constants';
 import { DomainConstants } from './domain.constants';
+import { ChartTypes } from './types.constants';
 
 import {
     BreakpointsConstants,
     MediaQueriesConstants,
-    SizesConstants
-} from './styles.constansts.js';
+    SizesConstants,
+    ColorsConstants
+} from './styles.constansts';
 
 export {
     LabelsConstants,
     DomainConstants,
     BreakpointsConstants,
     MediaQueriesConstants,
-    SizesConstants
+    SizesConstants,
+    ColorsConstants,
+    ChartTypes
 }

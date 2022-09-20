@@ -11,4 +11,7 @@ export class LabelsConstants {
     static facturas = 'Facturas';
     static nueva = 'Nueva';
     static registro = 'Registro';
+    static estadisticas = 'Estadisticas';
+    static graficos = 'Graficos';
+    static alquilados = 'Alquilados';
 }

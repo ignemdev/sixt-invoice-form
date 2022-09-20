@@ -21,7 +21,11 @@ export {
 };
 
 import { PageContainer } from './Container/PageContainer/PageContainer';
+import { SectionContainer } from './Container/SectionContainer/SectionContainer';
+import { CardContainer } from './Container/CardContainer/CardContainer';
 
 export {
-    PageContainer
+    PageContainer,
+    SectionContainer,
+    CardContainer
 }

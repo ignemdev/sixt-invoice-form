@@ -1,5 +1,8 @@
+import { ColorHelper } from '@utils/helpers';
+
 export class BreakpointsConstants {
-    static alwaysFullWidth = [ '100%', '100%', '100%', 'auto' ]
+    static alwaysFullWidth = [ '100%', '100%', '100%', 'auto' ];
+    static mobileCenterEvenly = [ 'center', 'space-evenly', 'space-evenly', 'start' ];
 }
 
 export class MediaQueriesConstants {
@@ -7,5 +10,9 @@ export class MediaQueriesConstants {
 }
 
 export class SizesConstants {
-    static remainingScreen = '92vh'
+    static remainingScreen = '92vh';
+}
+
+export class ColorsConstants {
+    static all400ThemeColors = ColorHelper.getAllThemeColorsByType('400');
 }
