@@ -1,7 +1,13 @@
+import { CardContainer, SectionContainer } from '@components/layout';
+
+import { LabelsConstants } from '@utils/constants';
+
 export const DebtorPage = () => {
     return (
-        <>
-            <h1>DebtorPage</h1>
-        </>
+        <SectionContainer title={ LabelsConstants.facturasDeudor }>
+            <CardContainer>
+                Hey
+            </CardContainer>
+        </SectionContainer>
     );
 }

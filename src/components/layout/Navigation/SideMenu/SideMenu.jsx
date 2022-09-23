@@ -11,7 +11,7 @@ export const SideMenu = ( { isMobile } ) => {
             p={ 6 }
             hidden={ isMobile }
             as='aside'
-            minWidth={ '250px' }
+            minWidth='250px'
         >
             <AppMenu/>
         </Box>

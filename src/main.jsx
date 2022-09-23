@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { RouterProvider } from 'react-router-dom';
 
+import { RouterProvider } from 'react-router-dom';
 import { appRouting } from '@utils/routing';
 
 import { ChakraProvider } from '@chakra-ui/react';

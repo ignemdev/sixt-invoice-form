@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import {
     Flex,
@@ -30,7 +31,9 @@ export const NavBar = ( { isMobile } ) => {
               alignItems='center'
               flexWrap='wrap'
         >
-            <Heading as='h1' size='lg'>{ DomainConstants.productName }</Heading>
+            <Heading size='lg' as={ Link } to='/'>
+                { DomainConstants.productName }
+            </Heading>
 
             <NavBarSearch
                 onSearch={ searchHandler }
