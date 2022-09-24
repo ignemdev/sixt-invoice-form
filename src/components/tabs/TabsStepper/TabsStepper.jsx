@@ -1,5 +1,31 @@
-export const TabsStepper = () => {
+import { Children, cloneElement } from 'react';
+
+import {
+    Tab,
+    TabList,
+    TabPanels,
+    Tabs
+} from '@chakra-ui/react';
+
+import { useStepper } from '@utils/hooks';
+
+export const TabsStepper = ( { children } ) => {
+
+    const { tabs, tabIndex, onTabClick } = useStepper(children);
+
     return (
-        <>Test</>
+        <Tabs index={ tabIndex }>
+            <TabList>
+                { tabs?.map(( title, i ) =>
+                    <Tab isDisabled={ i !== tabIndex } key={ title }>{ title }</Tab>
+                ) }
+            </TabList>
+            <TabPanels>
+                {
+                    Children.map(children, ( child ) =>
+                        cloneElement(child, { onStep: onTabClick }))
+                }
+            </TabPanels>
+        </Tabs>
     )
 }

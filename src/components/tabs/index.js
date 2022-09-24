@@ -1,7 +1,7 @@
 import { TabsStepper } from '@components/tabs/TabsStepper/TabsStepper';
-import { AppTabPanel } from '@components/tabs/AppTabPanel/AppTabPanel';
+import { TabStep } from '@components/tabs/TabStep/TabStep';
 
 export {
     TabsStepper,
-    AppTabPanel
+    TabStep
 }

@@ -1,6 +1,10 @@
 import { LabelsConstants } from './labels.constants';
 import { DomainConstants } from './domain.constants';
-import { ChartTypes } from './types.constants';
+
+import {
+    ChartTypes,
+    EventTypes
+} from './types.constants';
 
 import {
     BreakpointsConstants,
@@ -16,5 +20,6 @@ export {
     MediaQueriesConstants,
     SizesConstants,
     ColorsConstants,
-    ChartTypes
+    ChartTypes,
+    EventTypes
 }
