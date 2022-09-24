@@ -1,24 +1,26 @@
-import { useEffect, useState } from 'react';
+import {
+    Children,
+    useEffect,
+    useState
+} from 'react';
 
 export const useStepper = ( children ) => {
     const [ tabIndex, setTabIndex ] = useState(0);
     const [ tabs, setTabs ] = useState([]);
 
     useEffect(() => {
-        if (!Array.isArray(children))
-            children = [ children ];
-
-        const childrenTabs = children?.map(( { props: { title } } ) => title);
+        const childrenTabs = Children.toArray(children)?.map(( { props: { title } } ) => title);
 
         setTabs(childrenTabs);
-
     }, [])
 
     const onTabClick = () => {
-        if ((tabIndex + 1) === tabs?.length)
-            return;
+        let newTabIndex = tabIndex + 1;
 
-        setTabIndex(prevTabIndex => prevTabIndex += 1);
+        if (newTabIndex === tabs?.length)
+            newTabIndex = 0
+
+        setTabIndex(newTabIndex);
     }
 
     return {

@@ -14,10 +14,9 @@ export const TabStep = ( { children, title, eventToStep, onStep } ) => {
 
     return (
         <TabPanel>
-            {
-                Children.map(children, ( child ) =>
-                    cloneElement(child, { [ eventToStep ]: onStepHandler }))
-            }
+            { Children.map(children, ( child ) =>
+                cloneElement(child, { [ eventToStep ]: onStepHandler })
+            ) }
         </TabPanel>
     )
 }

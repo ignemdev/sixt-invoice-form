@@ -14,17 +14,23 @@ export const TabsStepper = ( { children } ) => {
     const { tabs, tabIndex, onTabClick } = useStepper(children);
 
     return (
-        <Tabs index={ tabIndex }>
+        <Tabs
+            index={ tabIndex }
+            variant='enclosed-colored'
+            colorScheme='blue'
+            isFitted
+            size='sm'
+            align='left'
+        >
             <TabList>
                 { tabs?.map(( title, i ) =>
                     <Tab isDisabled={ i !== tabIndex } key={ title }>{ title }</Tab>
                 ) }
             </TabList>
             <TabPanels>
-                {
-                    Children.map(children, ( child ) =>
-                        cloneElement(child, { onStep: onTabClick }))
-                }
+                { Children.map(children, ( child ) =>
+                    cloneElement(child, { onStep: onTabClick })
+                ) }
             </TabPanels>
         </Tabs>
     )
