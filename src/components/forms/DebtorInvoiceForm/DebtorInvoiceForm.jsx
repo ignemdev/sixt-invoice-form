@@ -2,13 +2,14 @@ import PropTypes from 'prop-types';
 
 import { useForm } from 'react-hook-form';
 
-import { Button } from '@chakra-ui/react';
+import { Button, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react';
 
 import {
     InputFormControl,
     SelectFormControl,
     FormControlContainer
 } from '@components/forms';
+import { AppTabPanel, AppTabs } from '@components/tabs';
 
 const validations = {
     cliente: {
@@ -58,6 +59,17 @@ export const DebtorInvoiceForm = ( { onSubmit } ) => {
                 <InputFormControl name={ 'NFC' } label={ 'NFC' }/>
             </FormControlContainer>
 
+            <AppTabs>
+                <AppTabPanel title={ '1' }>
+                    1
+                </AppTabPanel>
+                <AppTabPanel title={ '2' }>
+                    2
+                </AppTabPanel>
+                <AppTabPanel title={ '3' }>
+                    3
+                </AppTabPanel>
+            </AppTabs>
 
             <Button type={ 'submit' }>si</Button>
 
