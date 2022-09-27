@@ -7,7 +7,7 @@ import {
     Heading
 } from '@chakra-ui/react';
 
-import { BreakpointsConstants } from '@utils/constants/index.js';
+import { ResponsiveConstants } from '@utils/constants/index.js';
 
 export const SectionContainer = ( { children, title, hidden } ) => {
     return (
@@ -15,7 +15,7 @@ export const SectionContainer = ( { children, title, hidden } ) => {
             <Flex
                 gap={ 5 }
                 flexWrap='wrap'
-                justifyContent={ BreakpointsConstants.mobileCenterEvenly }
+                justifyContent={ ResponsiveConstants.mobileColumnDesktopStart }
                 alignItems='start'>
                 <Heading as='h5' size='sm'>{ title }</Heading>
                 <Divider/>

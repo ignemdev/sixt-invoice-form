@@ -7,7 +7,7 @@ import {
 } from './types.constants';
 
 import {
-    BreakpointsConstants,
+    ResponsiveConstants,
     MediaQueriesConstants,
     SizesConstants,
     ColorsConstants
@@ -16,7 +16,7 @@ import {
 export {
     LabelsConstants,
     DomainConstants,
-    BreakpointsConstants,
+    ResponsiveConstants,
     MediaQueriesConstants,
     SizesConstants,
     ColorsConstants,

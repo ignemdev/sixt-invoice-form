@@ -11,7 +11,7 @@ import {
 
 import { ChevronDownIcon } from '@chakra-ui/icons';
 
-import { LabelsConstants, BreakpointsConstants } from '@utils/constants';
+import { LabelsConstants, ResponsiveConstants } from '@utils/constants';
 
 export const NavBarUser = ( { username, userId } ) => {
 
@@ -21,7 +21,7 @@ export const NavBarUser = ( { username, userId } ) => {
                 as={ Button }
                 colorScheme={ 'blue' }
                 rightIcon={ <ChevronDownIcon/> }
-                w={ BreakpointsConstants.alwaysFullWidth }
+                w={ ResponsiveConstants.mobile100DesktopAuto }
             >
                 { username }
             </MenuButton>

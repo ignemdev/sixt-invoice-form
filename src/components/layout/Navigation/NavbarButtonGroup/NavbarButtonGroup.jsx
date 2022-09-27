@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Button, ButtonGroup, IconButton } from '@chakra-ui/react';
 import { HamburgerIcon, SettingsIcon } from '@chakra-ui/icons';
 
-import { LabelsConstants, BreakpointsConstants } from '@utils/constants';
+import { LabelsConstants, ResponsiveConstants } from '@utils/constants';
 
 export const NavbarButtonGroup = ( { onMenuClick, onSettingsClick, isMobile } ) => {
 
@@ -12,10 +12,10 @@ export const NavbarButtonGroup = ( { onMenuClick, onSettingsClick, isMobile } ) 
             gap='0.5'
             justifyContent='center'
             variant='ghost'
-            w={ BreakpointsConstants.alwaysFullWidth }
+            w={ ResponsiveConstants.mobile100DesktopAuto }
         >
             <Button
-                w={ BreakpointsConstants.alwaysFullWidth }
+                w={ ResponsiveConstants.mobile100DesktopAuto }
                 leftIcon={ <SettingsIcon/> }
                 onClick={ onSettingsClick }
                 width={ 'full' }
@@ -23,7 +23,7 @@ export const NavbarButtonGroup = ( { onMenuClick, onSettingsClick, isMobile } ) 
                 { LabelsConstants.ajustes }
             </Button>
             <IconButton
-                w={ BreakpointsConstants.alwaysFullWidth }
+                w={ ResponsiveConstants.mobile100DesktopAuto }
                 icon={ <HamburgerIcon/> }
                 onClick={ onMenuClick }
                 hidden={ !isMobile }

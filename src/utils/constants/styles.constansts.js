@@ -1,8 +1,13 @@
-import { ColorHelper } from '@utils/helpers';
+import { ColorHelper, StylesHelper } from '@utils/helpers';
 
-export class BreakpointsConstants {
-    static alwaysFullWidth = [ '100%', '100%', '100%', 'auto' ];
-    static mobileCenterEvenly = [ 'center', 'space-evenly', 'space-evenly', 'start' ];
+export class ResponsiveConstants {
+    static mobile100DesktopAuto = [ '100%', '100%', '100%', 'auto' ];
+    static mobileColumnDesktopStart = [ 'center', 'space-evenly', 'space-evenly', 'start' ];
+    static mobileColumnDesktopRow = [ 'column', null, 'row' ];
+    static mobileCenterDesktopStart = [ 'center', null, 'start' ];
+    static mobile1ColumnDesktop2Column = [ 1, null, 2 ];
+    static responsive150Width = StylesHelper.getResponsiveWidthSet(150);
+    static responsive200Width = StylesHelper.getResponsiveWidthSet(200);
 }
 
 export class MediaQueriesConstants {
