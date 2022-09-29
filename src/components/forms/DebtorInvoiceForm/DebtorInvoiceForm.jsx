@@ -57,11 +57,31 @@ export const DebtorInvoiceForm = ( { onSubmit } ) => {
     return (
         <form onSubmit={ handleSubmit(submitHandler) }>
             <FormControlContainer registerFunc={ register } validations={ formValidations } errors={ errors }>
-               
+                <InputFormControl name={ 'cliente' } label={ 'Cliente' }/>
+                <InputFormControl name={ 'N' } label={ 'N' } disabled type={ 'number' }/>
+
+                <InputFormControl name={ 'nombre' } label={ 'Nombre' }/>
+                <InputFormControl name={ 'estado' } label={ 'Estado' } disabled/>
+
+                <SelectFormControl name={ 'personaContacto' } label={ 'Persona de Contacto' }
+                                   optionsData={ [ { value: 1, text: 'option A' } ] }/>
+                <InputFormControl name={ 'contabilizacion' } type={ 'date' } label={ 'Contabilizacion' }/>
+
+                <InputFormControl name={ 'reservacion' } label={ 'Reservacion' }/>
+                <InputFormControl name={ 'vencimiento' } label={ 'Vencimiento' }
+                                  type={ 'date' }/>
+
+                <SelectFormControl name={ 'Moneda' }
+                                   optionsData={ [ { value: 1, text: 'Moneda Local' } ] } showLabel={ false }/>
+                <InputFormControl name={ 'fechaDocumento' } label={ 'Fecha de Documento' } type={ 'date' }/>
+
+                <InputFormControl name={ 'contrato' } label={ 'Contrato' }/>
+                <SelectFormControl name={ 'tipoNFC' } label={ 'Tipo NFC' }
+                                   optionsData={ [ { value: 1, text: 'option A' } ] }/>
+
+                <InputFormControl name={ 'identificacion' } label={ 'RNC / Cedula' }/>
+                <InputFormControl name={ 'NFC' } label={ 'NFC' } disabled/>
             </FormControlContainer>
-
-
-            <Button type='submit' colorScheme={ 'blue' }>Crear</Button>
         </form>
     )
 }
