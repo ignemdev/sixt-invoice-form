@@ -20,11 +20,12 @@ export const FormControlContainer = ( { children, columns, registerFunc, validat
             my={ 4 }
             py={ 4 }>
             { Children.map(children, ( child ) => {
-                let props = {};
-                const validChildren = [ 'SelectFormControl', 'InputFormControl' ];
-                if (validChildren.includes(child.type.name))
-                    props = { registerFunc, validations, errors }
+                // let props = {};
+                // const validChildren = [ 'SelectFormControl', 'InputFormControl' ];
+                // if (validChildren.includes(child.type.name))
+                const props = { registerFunc, validations, errors };
 
+                console.log(child, props)
                 return cloneElement(child, props)
             }) }
         </SimpleGrid>
