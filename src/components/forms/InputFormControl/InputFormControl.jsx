@@ -20,7 +20,7 @@ export const InputFormControl = ( props ) => {
         <FormControl isInvalid={ inputErrors }>
             <Stack
                 direction={ ResponsiveConstants.mobileColumnDesktopRow }
-                align='center'
+                align='start'
             >
                 { showLabel && (
                     <FormLabel fontSize={ 14 }

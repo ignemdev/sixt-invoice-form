@@ -13,9 +13,6 @@ export const DebtorPage = () => {
                     <TabStep title={ LabelsConstants.facturasDeudor } eventToStep={ EventTypes.onSubmit }>
                         <DebtorInvoiceForm/>
                     </TabStep>
-                    <TabStep title={ LabelsConstants.paymentInfo } eventToStep={ EventTypes.onSubmit }>
-                        <DebtorPaymentForm/>
-                    </TabStep>
                 </TabsStepper>
             </CardContainer>
         </SectionContainer>
