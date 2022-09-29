@@ -4,7 +4,7 @@ import { TabPanel } from '@chakra-ui/react';
 
 export const AppTabPanel = ( { children, title } ) => {
     return (
-        <TabPanel>
+        <TabPanel p={ 0 }>
             { children }
         </TabPanel>
     )

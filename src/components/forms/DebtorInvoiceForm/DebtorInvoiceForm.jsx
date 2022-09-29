@@ -2,16 +2,20 @@ import PropTypes from 'prop-types';
 
 import { useForm } from 'react-hook-form';
 
-import { Button, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react';
+import { Button, Divider } from '@chakra-ui/react';
 
 import {
     InputFormControl,
     SelectFormControl,
-    FormControlContainer
+    FormControlContainer,
+    AddProductForm
 } from '@components/forms';
-import { AppTabPanel, AppTabs } from '@components/tabs';
 
-const validations = {
+import { AppTabPanel, AppTabs } from '@components/tabs';
+import { AppTable } from '@components/tables';
+import { useState } from 'react';
+
+const formValidations = {
     cliente: {
         required: 'Campo Requerido'
     },
@@ -20,19 +24,38 @@ const validations = {
     }
 }
 
+const tableConfig = {
+    columns: [ 'Numero', 'Descripcion', 'Cantidad' ],
+    keyField: 'numero',
+    dataFields: [ 'numero', 'descripcion', 'cantidad' ],
+    deleteButton: true,
+    operationLabel: 'Operaciones'
+};
+
 export const DebtorInvoiceForm = ( { onSubmit } ) => {
 
+    const [ products, setProducts ] = useState([]);
     const { register, handleSubmit, formState: { errors }, reset } = useForm()
 
-    const submitHandler = ( values ) => {
-        console.log(values);
+    const submitHandler = ( invoice ) => {
+        const formData = { ...invoice, products }
         reset();
+        console.log(formData)
         // onSubmit();
+    }
+
+    const tableDataChangeHandler = ( dataRows ) => setProducts(dataRows);
+
+    const onProductAddedHandler = ( addedProduct ) => {
+        // if (products.some((( { numero } ) => numero === addedProduct?.numero)))
+        //     return;
+
+        setProducts(prevProduct => [ ...prevProduct, addedProduct ])
     }
 
     return (
         <form onSubmit={ handleSubmit(submitHandler) }>
-            <FormControlContainer registerFunc={ register } validations={ validations } errors={ errors }>
+            <FormControlContainer registerFunc={ register } validations={ formValidations } errors={ errors }>
                 <InputFormControl name={ 'cliente' } label={ 'Cliente' }/>
                 <InputFormControl name={ 'N' } label={ 'N' } disabled type={ 'number' }/>
 
@@ -59,20 +82,35 @@ export const DebtorInvoiceForm = ( { onSubmit } ) => {
                 <InputFormControl name={ 'NFC' } label={ 'NFC' }/>
             </FormControlContainer>
 
+            <Divider/>
+
             <AppTabs>
-                <AppTabPanel title={ '1' }>
-                    1
+                <AppTabPanel title={ 'Contenido' }>
+                    <AddProductForm onProductAdded={ onProductAddedHandler }/>
+                    <AppTable
+                        maxHeight='200px'
+                        data={ products }
+                        config={ tableConfig }
+                        onDataChanged={ tableDataChangeHandler }
+                    />
                 </AppTabPanel>
-                <AppTabPanel title={ '2' }>
+                <AppTabPanel title={ 'Logistica' }>
                     2
                 </AppTabPanel>
-                <AppTabPanel title={ '3' }>
+                <AppTabPanel title={ 'Finanzas' }>
                     3
+                </AppTabPanel>
+                <AppTabPanel title={ 'Anexos' }>
+                    4
                 </AppTabPanel>
             </AppTabs>
 
-            <Button type={ 'submit' }>si</Button>
+            <FormControlContainer registerFunc={ register } validations={ formValidations } errors={ errors }>
+                <SelectFormControl name={ 'vendedor' } label={ 'Vendedor' }
+                                   optionsData={ [ { value: 1, text: 'option A' } ] }/>
+            </FormControlContainer>
 
+            <Button type='submit'>si</Button>
         </form>
     )
 }
