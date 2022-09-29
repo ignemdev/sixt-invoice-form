@@ -7,10 +7,10 @@ import PropTypes from 'prop-types';
 
 export const FormControlContainer = ( { children, columns, registerFunc, validations, errors } ) => {
 
-    const isValidchild = ( { type: { name } } ) => {
-        const validChildren = [ 'SelectFormControl', 'InputFormControl' ];
-        return validChildren.includes(name);
-    }
+    // const isValidchild = ( { type: { name } } ) => {
+    //     const validChildren = [ 'SelectFormControl', 'InputFormControl' ];
+    //     return validChildren.includes(name);
+    // }
 
     return (
         <SimpleGrid
@@ -21,8 +21,8 @@ export const FormControlContainer = ( { children, columns, registerFunc, validat
             py={ 4 }>
             { Children.map(children, ( child ) => {
                 let props = {};
-
-                if (isValidchild(child))
+                const validChildren = [ 'SelectFormControl', 'InputFormControl' ];
+                if (validChildren.includes(child.type.name))
                     props = { registerFunc, validations, errors }
 
                 return cloneElement(child, props)
