@@ -8,7 +8,6 @@ import { InputFormControl, SelectFormControl } from '@components/forms';
 
 const isValidchild = ( { type } ) => {
     const validChildren = [ SelectFormControl, InputFormControl ];
-    console.log(validChildren.includes(type))
     return validChildren.includes(type);
 }
 
