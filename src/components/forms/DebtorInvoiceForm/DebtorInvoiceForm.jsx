@@ -56,7 +56,10 @@ export const DebtorInvoiceForm = ( { onSubmit } ) => {
 
     return (
         <form onSubmit={ handleSubmit(submitHandler) }>
-           
+            <FormControlContainer registerFunc={ register } validations={ formValidations } errors={ errors }>
+               
+            </FormControlContainer>
+
 
             <Button type='submit' colorScheme={ 'blue' }>Crear</Button>
         </form>
