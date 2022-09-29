@@ -4,12 +4,12 @@ import { SimpleGrid } from '@chakra-ui/react';
 
 import { ResponsiveConstants } from '@utils/constants';
 import PropTypes from 'prop-types';
+import { InputFormControl, SelectFormControl } from '@components/forms';
 
 const isValidchild = ( { type } ) => {
-    // const validChildren = [ 'SelectFormControl', 'InputFormControl' ];
-    // return validChildren.includes(name);
-    console.log(type);
-    return true;
+    const validChildren = [ SelectFormControl, InputFormControl ];
+    console.log(validChildren.includes(type))
+    return validChildren.includes(type);
 }
 
 export const FormControlContainer = ( { children, columns, registerFunc, validations, errors } ) => {
