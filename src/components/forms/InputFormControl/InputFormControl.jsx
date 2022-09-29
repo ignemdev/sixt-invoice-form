@@ -55,6 +55,7 @@ InputFormControl.propTypes = {
 InputFormControl.defaultProps = {
     label: '</InputFormControl>',
     type: 'text',
-    showLabel: true
+    showLabel: true,
+    registerFunc: () => console.log('d')
 }
 
