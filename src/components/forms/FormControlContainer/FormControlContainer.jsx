@@ -5,10 +5,10 @@ import { SimpleGrid } from '@chakra-ui/react';
 import { ResponsiveConstants } from '@utils/constants';
 import PropTypes from 'prop-types';
 
-// const isValidchild = ( { type: { name } } ) => {
-//     const validChildren = [ 'SelectFormControl', 'InputFormControl' ];
-//     return validChildren.includes(name);
-// }
+const isValidchild = ( { type: { name } } ) => {
+    const validChildren = [ 'SelectFormControl', 'InputFormControl' ];
+    return validChildren.includes(name);
+}
 
 export const FormControlContainer = ( { children, columns, registerFunc, validations, errors } ) => {
     return (
@@ -18,15 +18,11 @@ export const FormControlContainer = ( { children, columns, registerFunc, validat
             spacingY={ 3 }
             my={ 4 }
             py={ 4 }>
-            {/*{ Children.map(children, ( child ) => {*/ }
-            {/*    let props = {};*/ }
+            { Children.map(children, ( child ) => {
+                const props = { registerFunc, validations, errors }
 
-            {/*    if (isValidchild(child))*/ }
-            {/*        props = { registerFunc, validations, errors }*/ }
-
-            {/*    return cloneElement(child, props)*/ }
-            {/*}) }*/ }
-            { children }
+                return cloneElement(child, props)
+            }) }
         </SimpleGrid>
     )
 }
