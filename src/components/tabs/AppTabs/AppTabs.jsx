@@ -1,8 +1,14 @@
-import { Tab, TabList, TabPanels, Tabs } from '@chakra-ui/react';
-import { Children } from 'react';
+import {
+    Tab,
+    TabList,
+    TabPanels,
+    Tabs
+} from '@chakra-ui/react';
+
+import { ComponentHelper } from '@utils/helpers';
 
 export const AppTabs = ( { children } ) => {
-    const tabs = Children.toArray(children)?.map(( { props: { title } } ) => title);
+    const tabs = ComponentHelper.getPropArrayFromChildren(children, 'title');
 
     return (
         <Tabs
@@ -15,9 +21,7 @@ export const AppTabs = ( { children } ) => {
             py={ 4 }
         >
             <TabList>
-                { tabs?.map(( title, i ) =>
-                    <Tab key={ title }>{ title }</Tab>
-                ) }
+                { tabs?.map(title => (<Tab key={ title }>{ title }</Tab>)) }
             </TabList>
             <TabPanels>
                 { children }

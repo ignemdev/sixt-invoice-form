@@ -1,8 +1,12 @@
 import { useEffect, useState } from 'react';
 
+import { Button, ButtonGroup, Divider } from '@chakra-ui/react';
+
 import { CardContainer, SectionContainer } from '@components/layout';
+import { SearchForm } from '@components/forms';
 import { AppTable } from '@components/tables';
-import { Button, ButtonGroup } from '@chakra-ui/react';
+
+import { SizesConstants } from '@utils/constants';
 
 const tableConfig = {
     columns: [ 'Numero', 'Descripcion', 'Cantidad', 'Total' ],
@@ -16,7 +20,7 @@ const tableData = [
     { numero: 1, descripcion: 'Esto', cantidad: 5, total: 5000 },
     { numero: 2, descripcion: 'Esto', cantidad: 5, total: 5000 },
     { numero: 3, descripcion: 'Esto', cantidad: 5, total: 5000 },
-    { numero: 4, descripcion: 'Esto', cantidad: 5, total: 5000 },
+    { numero: 4, descripcion: 'test', cantidad: 5, total: 5000 },
     { numero: 5, descripcion: 'Esto', cantidad: 5, total: 5000 },
     { numero: 6, descripcion: 'Esto', cantidad: 5, total: 5000 },
     { numero: 7, descripcion: 'Esto', cantidad: 5, total: 5000 },
@@ -24,26 +28,57 @@ const tableData = [
     { numero: 9, descripcion: 'Esto', cantidad: 5, total: 5000 },
     { numero: 10, descripcion: 'Esto', cantidad: 5, total: 5000 },
     { numero: 11, descripcion: 'Esto', cantidad: 5, total: 5000 }
-]
+];
 
 export const InvoicesPage = () => {
-
     const [ invoices, setInvoices ] = useState(tableData);
 
     useEffect(() => {
         //fetch the invoices to display them into the table using setInvoices
     }, []);
 
+    const exportHandler = () => console.log(invoices);
+    const shareHandler = () => console.log(invoices);
+
+    const searchHandler = ( filter ) => {
+        //fetch server to retrieve invoices based on the filterValue
+        //this logic is likely to be within a service, it's here for demonstration
+        const criteria = filter[ 0 ];
+        const value = filter[ 1 ];
+
+        console.log(invoices)
+
+        const filteredInvoices = invoices.filter(invoice => invoice[ criteria ] === value);
+
+        setInvoices(filteredInvoices);
+    };
+
     return (
         <SectionContainer title={ 'Registro de Facturas' }>
-            <CardContainer>
-                <ButtonGroup variant='outline' spacing='2' size={ 'sm' } mb={ 5 }
-                             justifyContent={ 'right' }
-                             w={ '100%' }>
-                    <Button colorScheme='blue'>Exportar</Button>
-                    <Button colorScheme='blue'>Guardar</Button>
+            <CardContainer maxWidth={ SizesConstants.invoicePageCardContainer }>
+                <ButtonGroup
+                    variant='outline'
+                    spacing='2'
+                    size='sm'
+                    mb={ 5 }
+                    justifyContent='right'
+                    w='100%'
+                >
+                    <Button colorScheme='blue' variant='solid' onClick={ exportHandler }>Exportar</Button>
+                    <Button colorScheme='blue' variant='solid' onClick={ shareHandler }>Compartir</Button>
                 </ButtonGroup>
-                <AppTable data={ invoices } config={ tableConfig }/>
+
+                <Divider/>
+
+                <SearchForm onSearched={ searchHandler }/>
+
+                <Divider/>
+
+                <AppTable
+                    maxWidth={ SizesConstants.invoicePageCardContainer }
+                    data={ invoices }
+                    config={ tableConfig }
+                />
             </CardContainer>
         </SectionContainer>
     );

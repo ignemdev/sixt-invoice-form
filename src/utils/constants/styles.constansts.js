@@ -19,6 +19,7 @@ export class MediaQueriesConstants {
 export class SizesConstants {
     static remainingScreen = '92vh';
     static debtorInvoiceForm = '788px';
+    static invoicePageCardContainer = '965px';
 }
 
 export class ColorsConstants {

@@ -1,7 +1,7 @@
 import { CardContainer, SectionContainer } from '@components/layout';
 
 import { TabsStepper, TabStep } from '@components/tabs';
-import { DebtorInvoiceForm, DebtorPaymentForm } from '@components/forms';
+import { DebtorInvoiceForm } from '@components/forms';
 
 import { LabelsConstants, EventTypes } from '@utils/constants';
 

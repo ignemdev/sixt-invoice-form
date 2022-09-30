@@ -1,5 +1,8 @@
 import { useForm } from 'react-hook-form';
 
+import { Box, IconButton } from '@chakra-ui/react';
+import { SmallAddIcon } from '@chakra-ui/icons';
+
 import {
     FormControlContainer,
     InputFormControl,
@@ -7,8 +10,6 @@ import {
 } from '@components/forms';
 
 import { ResponsiveConstants, SizesConstants } from '@utils/constants';
-import { Box, IconButton } from '@chakra-ui/react';
-import { SmallAddIcon } from '@chakra-ui/icons';
 
 const formValidations = {
     numero: {
@@ -40,15 +41,17 @@ export const AddProductForm = ( { onProductAdded } ) => {
                 columns={ ResponsiveConstants.mobile1ColumnDesktop3Column }
                 validations={ formValidations }
                 errors={ errors }>
+
                 <SelectFormControl
                     name={ 'numero' }
                     label={ 'Producto' }
                     optionsData={ [
                         { value: 1, text: 'Producto1' },
                         { value: 2, text: 'Producto2' }
-                    ] }
-                />
+                    ] }/>
+
                 <InputFormControl name={ 'cantidad' } label={ 'Cantidad' } type={ 'number' }/>
+
                 <IconButton
                     justifySelf={ 'end' }
                     width={ ResponsiveConstants.responsiveMinContentWidth } size='sm'

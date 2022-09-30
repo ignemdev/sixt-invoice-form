@@ -24,7 +24,7 @@ export const TabsStepper = ( { children } ) => {
         >
             <TabList>
                 { tabs?.map(( title, i ) =>
-                    <Tab isDisabled={ i !== tabIndex } key={ title }>{ title }</Tab>
+                    (<Tab isDisabled={ i !== tabIndex } key={ title }>{ title }</Tab>)
                 ) }
             </TabList>
             <TabPanels>

@@ -1,17 +1,18 @@
 import { Children, cloneElement } from 'react';
+import PropTypes from 'prop-types';
 
 import { SimpleGrid } from '@chakra-ui/react';
 
-import { ResponsiveConstants } from '@utils/constants';
-import PropTypes from 'prop-types';
 import { InputFormControl, SelectFormControl } from '@components/forms';
+
+import { ResponsiveConstants } from '@utils/constants';
 
 const isValidchild = ( { type } ) => {
     const validChildren = [ SelectFormControl, InputFormControl ];
     return validChildren.includes(type);
 }
 
-export const FormControlContainer = ( { children, columns, registerFunc, validations, errors } ) => {
+export const FormControlContainer = ( { columns, children, registerFunc, validations, errors } ) => {
     return (
         <SimpleGrid
             columns={ columns }

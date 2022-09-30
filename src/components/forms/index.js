@@ -4,6 +4,7 @@ import { InputFormControl } from '@components/forms/InputFormControl/InputFormCo
 import { SelectFormControl } from '@components/forms/SelectFormControl/SelectFormControl';
 import { FormControlContainer } from '@components/forms/FormControlContainer/FormControlContainer';
 import { AddProductForm } from '@components/forms/AddProductForm/AddProductForm';
+import { SearchForm } from '@components/forms/SearchForm/SearchForm';
 
 export {
     DebtorInvoiceForm,
@@ -11,5 +12,6 @@ export {
     InputFormControl,
     SelectFormControl,
     FormControlContainer,
-    AddProductForm
+    AddProductForm,
+    SearchForm
 }

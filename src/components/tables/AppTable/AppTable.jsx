@@ -14,11 +14,11 @@ import {
 
 import { MinusIcon } from '@chakra-ui/icons';
 
-export const AppTable = ( { config, data, maxHeight, onDataChanged } ) => {
-
-    const { columns, keyField, dataFields, operationLabel, deleteButton } = config;
+export const AppTable = ( { maxHeight, maxWidth, config, data, onDataChanged } ) => {
 
     const [ rows, setRows ] = useState(data);
+
+    const { columns, keyField, dataFields, operationLabel, deleteButton } = config;
 
     useEffect(() => {
         setRows(data)
@@ -31,40 +31,41 @@ export const AppTable = ( { config, data, maxHeight, onDataChanged } ) => {
     }
 
     return (
-        <TableContainer maxHeight={ maxHeight } overflowY='auto'>
-            <Table
-                variant='simple'
-                size='sm'
-            >
+        <TableContainer
+            maxHeight={ maxHeight }
+            maxWidth={ maxWidth }
+            overflowY='auto'
+            overflowX='auto'
+        >
+            <Table variant='simple' size='sm'>
                 <Thead>
                     <Tr>
                         { columns?.map(column => (<Th key={ column }>{ column }</Th>)) }
-                        { deleteButton && <Th>{ operationLabel }</Th> }
+
+                        { deleteButton && (<Th>{ operationLabel }</Th>) }
                     </Tr>
                 </Thead>
                 <Tbody>
-                    { rows?.map(row => (
-                            <Tr key={ row[ keyField ] }>
-                                { dataFields?.map(dataField => (
-                                        <Td key={ `${ row[ keyField ] }-${ dataField }` }>
-                                            { row[ dataField ] }
-                                        </Td>
-                                    )
-                                ) }
-                                { deleteButton && (
-                                    <Td alignItems={ 'center' }>
-                                        <IconButton
-                                            key={ row[ keyField ] }
-                                            colorScheme='gray'
-                                            variant='ghost'
-                                            aria-label='Delete item'
-                                            size='xs'
-                                            onClick={ () => onDeletedRow(row[ keyField ]) }
-                                            icon={ <MinusIcon/> }/>
-                                    </Td>
-                                ) }
-                            </Tr>
-                        )
+                    { rows?.map(row =>
+                        (<Tr key={ row[ keyField ] }>
+                            { dataFields?.map(dataField =>
+                                (<Td key={ `${ row[ keyField ] }-${ dataField }` }>
+                                    { row[ dataField ] }
+                                </Td>)
+                            ) }
+
+                            { deleteButton &&
+                                (<Td alignItems='center'>
+                                    <IconButton
+                                        key={ row[ keyField ] }
+                                        colorScheme='gray'
+                                        variant='ghost'
+                                        aria-label='Delete row'
+                                        size='xs'
+                                        onClick={ () => onDeletedRow(row[ keyField ]) }
+                                        icon={ <MinusIcon/> }/>
+                                </Td>) }
+                        </Tr>)
                     ) }
                 </Tbody>
             </Table>
@@ -73,15 +74,17 @@ export const AppTable = ( { config, data, maxHeight, onDataChanged } ) => {
 }
 
 AppTable.propTypes = {
+    maxHeight: PropTypes.string.isRequired,
+    maxWidth: PropTypes.string.isRequired,
     config: PropTypes.object.isRequired,
     data: PropTypes.array.isRequired,
-    onDataChanged: PropTypes.func.isRequired,
-    maxHeight: PropTypes.string.isRequired
+    onDataChanged: PropTypes.func.isRequired
 }
 
 AppTable.defaultProps = {
+    maxHeight: 'auto',
+    maxWidth: 'auto',
     config: {},
     data: [],
-    onDataChanged: () => console.log('<AppTable/> data changed'),
-    maxHeight: 'auto'
+    onDataChanged: () => console.log('<AppTable/> data changed')
 }

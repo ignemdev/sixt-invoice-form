@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import { Box } from '@chakra-ui/react';
 
-export const CardContainer = ( { children, fullContainerSize } ) => {
+export const CardContainer = ( { children, maxWidth, fullContainerSize } ) => {
     const flex = (fullContainerSize) ? '1' : 'unset';
 
     return (
@@ -11,6 +11,7 @@ export const CardContainer = ( { children, fullContainerSize } ) => {
             rounded='sm'
             flex={ flex }
             cursor='default'
+            maxWidth={ maxWidth }
         >
             { children }
         </Box>
@@ -18,9 +19,11 @@ export const CardContainer = ( { children, fullContainerSize } ) => {
 }
 
 CardContainer.propTypes = {
-    fullContainerSize: PropTypes.bool.isRequired
+    fullContainerSize: PropTypes.bool.isRequired,
+    maxWidth: PropTypes.string.isRequired
 }
 
 CardContainer.defaultProps = {
-    fullContainerSize: false
+    fullContainerSize: false,
+    maxWidth: 'auto',
 }

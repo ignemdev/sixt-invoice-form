@@ -41,10 +41,8 @@ export const SelectFormControl = ( props ) => {
 
     return (
         <FormControl isInvalid={ inputErrors }>
-            <Stack
-                direction={ ResponsiveConstants.mobileColumnDesktopRow }
-                align={ ResponsiveConstants.mobileCenterDesktopStart }
-            >
+            <Stack direction={ ResponsiveConstants.mobileColumnDesktopRow }
+                   align={ ResponsiveConstants.mobileCenterDesktopStart }>
                 { showLabel && (
                     <FormLabel fontSize={ 14 }
                                width={ ResponsiveConstants.responsive150Width }
@@ -53,18 +51,21 @@ export const SelectFormControl = ( props ) => {
                         { label }
                     </FormLabel>
                 ) }
+
                 <Select
                     disabled={ disabled }
                     id={ name }
                     width={ (showLabel) ? ResponsiveConstants.responsive200Width : '100%' }
                     size='sm'
-                    { ...registerFunc(name, validations?.[ name ]) }
-                >
+                    { ...registerFunc(name, validations?.[ name ]) }>
+
                     { options?.map(( { value, text } ) =>
-                        (<option key={ value } value={ value }>{ text }</option>)
+                        (<option key={ value ?? text } value={ value ?? text }>{ text }</option>)
                     ) }
+
                 </Select>
             </Stack>
+
             <FormErrorMessage>
                 { inputErrors?.message }
             </FormErrorMessage>

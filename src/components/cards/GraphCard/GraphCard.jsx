@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { Heading, Hide } from '@chakra-ui/react';
+import { Heading } from '@chakra-ui/react';
 
 import { CardContainer } from '@components/layout';
 import { AppPieChart, AppBarChart } from '@components/charts';
 
-import { ChartTypes, MediaQueriesConstants } from '@utils/constants';
+import { ChartTypes } from '@utils/constants';
 
 export const GraphCard = ( { name, dataUrl, fullContainerSize, type } ) => {
 

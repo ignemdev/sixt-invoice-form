@@ -18,10 +18,7 @@ export const InputFormControl = ( props ) => {
 
     return (
         <FormControl isInvalid={ inputErrors }>
-            <Stack
-                direction={ ResponsiveConstants.mobileColumnDesktopRow }
-                align='start'
-            >
+            <Stack direction={ ResponsiveConstants.mobileColumnDesktopRow } align='start'>
                 { showLabel && (
                     <FormLabel fontSize={ 14 }
                                width={ ResponsiveConstants.responsive150Width }
@@ -30,15 +27,16 @@ export const InputFormControl = ( props ) => {
                         { label }
                     </FormLabel>
                 ) }
+
                 <Input
                     type={ type }
                     disabled={ disabled }
                     width={ (showLabel) ? ResponsiveConstants.responsive200Width : '100%' }
                     size='sm'
                     id={ name }
-                    { ...registerFunc(name, validations?.[ name ]) }
-                />
+                    { ...registerFunc(name, validations?.[ name ]) }/>
             </Stack>
+
             <FormErrorMessage>
                 { inputErrors?.message }
             </FormErrorMessage>

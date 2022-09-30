@@ -7,7 +7,7 @@ import {
     Heading
 } from '@chakra-ui/react';
 
-import { ResponsiveConstants } from '@utils/constants/index.js';
+import { ResponsiveConstants } from '@utils/constants';
 
 export const SectionContainer = ( { children, title, hidden } ) => {
     return (
