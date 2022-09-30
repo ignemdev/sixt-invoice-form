@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import {
-    FormControl, FormErrorMessage,
+    FormControl,
+    FormErrorMessage,
     FormLabel,
     Select,
     Stack

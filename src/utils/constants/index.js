@@ -1,9 +1,11 @@
 import { LabelsConstants } from './labels.constants';
+import { NamesConstants } from './form.constants';
 import { DomainConstants } from './domain.constants';
 
 import {
     ChartTypes,
-    EventTypes
+    EventTypes,
+    InputTypes
 } from './types.constants';
 
 import {
@@ -21,5 +23,7 @@ export {
     SizesConstants,
     ColorsConstants,
     ChartTypes,
-    EventTypes
+    EventTypes,
+    InputTypes,
+    NamesConstants
 }

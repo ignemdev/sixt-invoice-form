@@ -9,7 +9,13 @@ import {
     SelectFormControl
 } from '@components/forms';
 
-import { ResponsiveConstants, SizesConstants } from '@utils/constants';
+import {
+    ResponsiveConstants,
+    SizesConstants,
+    NamesConstants,
+    LabelsConstants,
+    InputTypes
+} from '@utils/constants';
 
 const formValidations = {
     numero: {
@@ -43,18 +49,23 @@ export const AddProductForm = ( { onProductAdded } ) => {
                 errors={ errors }>
 
                 <SelectFormControl
-                    name={ 'numero' }
-                    label={ 'Producto' }
+                    name={ NamesConstants.numero }
+                    label={ LabelsConstants.producto }
                     optionsData={ [
                         { value: 1, text: 'Producto1' },
                         { value: 2, text: 'Producto2' }
                     ] }/>
 
-                <InputFormControl name={ 'cantidad' } label={ 'Cantidad' } type={ 'number' }/>
+                <InputFormControl
+                    name={ NamesConstants.cantidad }
+                    label={ LabelsConstants.cantidad }
+                    type={ InputTypes.number }
+                />
 
                 <IconButton
-                    justifySelf={ 'end' }
-                    width={ ResponsiveConstants.responsiveMinContentWidth } size='sm'
+                    justifySelf='end'
+                    width={ ResponsiveConstants.responsiveMinContentWidth }
+                    size='sm'
                     aria-label='Add product'
                     icon={ <SmallAddIcon/> }
                     onClick={ handleSubmit(submitHandler) }

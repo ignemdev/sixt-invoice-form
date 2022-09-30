@@ -15,7 +15,12 @@ import {
 import { AppTabPanel, AppTabs } from '@components/tabs';
 import { AppTable } from '@components/tables';
 
-import { ResponsiveConstants } from '@utils/constants/index.js';
+import {
+    ResponsiveConstants,
+    LabelsConstants,
+    NamesConstants,
+    InputTypes
+} from '@utils/constants';
 
 const formValidations = {
     cliente: {
@@ -60,74 +65,74 @@ export const DebtorInvoiceForm = ( { onSubmit } ) => {
         <form onSubmit={ handleSubmit(submitHandler) }>
             <FormControlContainer registerFunc={ register } validations={ formValidations } errors={ errors }>
                 <InputFormControl
-                    name={ 'cliente' }
-                    label={ 'Cliente' }
+                    name={ NamesConstants.cliente }
+                    label={ LabelsConstants.cliente }
                 />
                 <InputFormControl
-                    name={ 'N' }
-                    label={ 'N' }
+                    name={ NamesConstants.N }
+                    label={ LabelsConstants.N }
                     disabled
-                    type={ 'number' }
+                    type={ InputTypes.number }
                 />
 
                 <InputFormControl
-                    name={ 'nombre' }
-                    label={ 'Nombre' }
+                    name={ NamesConstants.nombre }
+                    label={ LabelsConstants.nombre }
                 />
                 <InputFormControl
-                    name={ 'estado' }
-                    label={ 'Estado' }
+                    name={ NamesConstants.estado }
+                    label={ LabelsConstants.estado }
                     disabled
                 />
 
                 <SelectFormControl
-                    name={ 'personaContacto' }
-                    label={ 'Persona de Contacto' }
+                    name={ NamesConstants.personaContacto }
+                    label={ LabelsConstants.personaContacto }
                     optionsData={ [ { value: 1, text: 'option A' } ] }
                 />
                 <InputFormControl
-                    name={ 'contabilizacion' }
-                    type={ 'date' }
-                    label={ 'Contabilizacion' }
+                    name={ NamesConstants.contabilizacion }
+                    label={ LabelsConstants.contabilizacion }
+                    type={ InputTypes.date }
                 />
 
                 <InputFormControl
-                    name={ 'reservacion' }
-                    label={ 'Reservacion' }
+                    name={ NamesConstants.reservacion }
+                    label={ LabelsConstants.reservacion }
                 />
                 <InputFormControl
-                    name={ 'vencimiento' }
-                    label={ 'Vencimiento' }
-                    type={ 'date' }/>
+                    name={ NamesConstants.vencimiento }
+                    label={ LabelsConstants.vencimiento }
+                    type={ InputTypes.date }/>
 
                 <SelectFormControl
-                    name={ 'Moneda' }
+                    name={ NamesConstants.moneda }
                     optionsData={ [ { value: 1, text: 'Moneda Local' } ] }
                     showLabel={ false }
                 />
                 <InputFormControl
-                    name={ 'fechaDocumento' }
-                    label={ 'Fecha de Documento' }
-                    type={ 'date' }
+                    name={ NamesConstants.fechaDocumento }
+                    label={ LabelsConstants.fechaDocumento }
+                    type={ InputTypes.date }
                 />
 
                 <InputFormControl
-                    name={ 'contrato' }
-                    label={ 'Contrato' }
+                    name={ NamesConstants.contrato }
+                    label={ LabelsConstants.contrato }
                 />
                 <SelectFormControl
-                    name={ 'tipoNFC' }
-                    label={ 'Tipo NFC' }
+                    name={ NamesConstants.tipoNFC }
+                    label={ LabelsConstants.tipoNFC }
                     optionsData={ [ { value: 1, text: 'option A' } ] }
                 />
 
                 <InputFormControl
-                    name={ 'identificacion' }
-                    label={ 'RNC / Cedula' }
+                    name={ NamesConstants.identificacion }
+                    label={ `${ LabelsConstants.RNC } / ${ LabelsConstants.cedula }` }
                 />
                 <InputFormControl
-                    name={ 'NFC' }
-                    label={ 'NFC' }
+                    name={ NamesConstants.NFC }
+                    label={ LabelsConstants.NFC }
                     disabled
                 />
             </FormControlContainer>
@@ -135,7 +140,7 @@ export const DebtorInvoiceForm = ( { onSubmit } ) => {
             <Divider/>
 
             <AppTabs>
-                <AppTabPanel title={ 'Contenido' }>
+                <AppTabPanel title={ LabelsConstants.contenido }>
                     <AddProductForm onProductAdded={ onProductAddedHandler }/>
                     <AppTable
                         maxHeight='200px'
@@ -144,13 +149,13 @@ export const DebtorInvoiceForm = ( { onSubmit } ) => {
                         onDataChanged={ tableDataChangeHandler }
                     />
                 </AppTabPanel>
-                <AppTabPanel title={ 'Logistica' }>
+                <AppTabPanel title={ LabelsConstants.logistica }>
                     2
                 </AppTabPanel>
-                <AppTabPanel title={ 'Finanzas' }>
+                <AppTabPanel title={ LabelsConstants.finanzas }>
                     3
                 </AppTabPanel>
-                <AppTabPanel title={ 'Anexos' }>
+                <AppTabPanel title={ LabelsConstants.anexos }>
                     4
                 </AppTabPanel>
             </AppTabs>
@@ -168,26 +173,26 @@ export const DebtorInvoiceForm = ( { onSubmit } ) => {
                     errors={ errors }
                 >
                     <SelectFormControl
-                        name={ 'vendedor' }
-                        label={ 'Vendedor' }
+                        name={ NamesConstants.vendedor }
+                        label={ LabelsConstants.vendedor }
                         optionsData={ [ { value: 1, text: 'option A' } ] }
                     />
                     <InputFormControl
-                        name={ 'propietario' }
-                        label={ 'Propietario' }
+                        name={ NamesConstants.propietario }
+                        label={ LabelsConstants.propietario }
                     />
                     <SelectFormControl
-                        name={ 'usoPrincipal' }
-                        label={ 'Uso Principal' }
+                        name={ NamesConstants.usoPrincipal }
+                        label={ LabelsConstants.usoPrincipal }
                         optionsData={ [ { value: 1, text: 'option A' } ] }
                     />
                     <InputFormControl
-                        name={ 'cuentaAsociada' }
-                        label={ 'Cuenta Asociada' }
+                        name={ NamesConstants.cuentaAsociada }
+                        label={ LabelsConstants.cuentaAsociada }
                     />
                     <InputFormControl
-                        name={ 'comentario' }
-                        label={ 'Comentario' }
+                        name={ NamesConstants.comentario }
+                        label={ LabelsConstants.comentario }
                     />
                 </FormControlContainer>
 
@@ -198,51 +203,51 @@ export const DebtorInvoiceForm = ( { onSubmit } ) => {
                     errors={ errors }
                 >
                     <InputFormControl
-                        name={ 'totalAntesDescuento' }
-                        label={ 'Antes del Descuento' }
+                        name={ NamesConstants.totalAntesDescuento }
+                        label={ LabelsConstants.totalAntesDescuento }
                         disabled
-                        type={ 'number' }
+                        type={ InputTypes.number }
                     />
                     <InputFormControl
-                        name={ 'anticipoTotal' }
-                        label={ 'Anticipo Total' }
+                        name={ NamesConstants.anticipoTotal }
+                        label={ LabelsConstants.anticipoTotal }
                         disabled
-                        type={ 'number' }
+                        type={ InputTypes.number }
                     />
                     <InputFormControl
-                        name={ 'redondeo' }
-                        label={ 'Redondeo' }
-                        type={ 'number' }
-                        disabled
-                    />
-                    <InputFormControl
-                        name={ 'impuesto' }
-                        label={ 'Impuesto' }
-                        type={ 'number' }
+                        name={ NamesConstants.redondeo }
+                        label={ LabelsConstants.redondeo }
+                        type={ InputTypes.number }
                         disabled
                     />
                     <InputFormControl
-                        name={ 'total' }
-                        label={ 'Total' }
-                        type={ 'number' }
+                        name={ NamesConstants.impuesto }
+                        label={ LabelsConstants.impuesto }
+                        type={ InputTypes.number }
                         disabled
                     />
                     <InputFormControl
-                        name={ 'importeAplicado' }
-                        label={ 'Importe Aplicado' }
-                        type={ 'number' }
+                        name={ NamesConstants.total }
+                        label={ LabelsConstants.total }
+                        type={ InputTypes.number }
                         disabled
                     />
                     <InputFormControl
-                        name={ 'saldoVencido' }
-                        label={ 'Saldo Vencido' }
-                        type={ 'number' }
+                        name={ NamesConstants.importeAplicado }
+                        label={ LabelsConstants.importeAplicado }
+                        type={ InputTypes.number }
+                        disabled
+                    />
+                    <InputFormControl
+                        name={ NamesConstants.saldoVencido }
+                        label={ LabelsConstants.saldoVencido }
+                        type={ InputTypes.number }
                         disabled
                     />
                 </FormControlContainer>
             </SimpleGrid>
 
-            <Button type='submit' colorScheme='blue'>Crear</Button>
+            <Button type='submit' colorScheme='blue'>{ LabelsConstants.crear }</Button>
         </form>
     )
 }

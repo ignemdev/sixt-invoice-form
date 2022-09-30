@@ -7,3 +7,8 @@ export class EventTypes {
     static onSubmit = 'onSubmit';
     static onClick = 'onClick';
 }
+
+export class InputTypes {
+    static number = 'number';
+    static date = 'date';
+}

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 
 import { IconButton } from '@chakra-ui/react';
@@ -5,8 +6,11 @@ import { Search2Icon } from '@chakra-ui/icons';
 
 import { FormControlContainer, InputFormControl, SelectFormControl } from '@components/forms';
 
-import { ResponsiveConstants } from '@utils/constants';
-import PropTypes from 'prop-types';
+import {
+    ResponsiveConstants,
+    LabelsConstants,
+    NamesConstants
+} from '@utils/constants';
 
 const formValidations = {
     criteria: {
@@ -38,13 +42,13 @@ export const SearchForm = ( { criterias, onSearched } ) => {
             errors={ errors }>
 
             <SelectFormControl
-                name={ 'criteria' }
-                label={ 'Criterio' }
+                name={ NamesConstants.criterio }
+                label={ LabelsConstants.criterio }
                 optionsData={ criterias }/>
 
             <InputFormControl
-                name={ 'value' }
-                label={ 'Valor' }
+                name={ NamesConstants.valor }
+                label={ LabelsConstants.valor }
             />
 
             <IconButton

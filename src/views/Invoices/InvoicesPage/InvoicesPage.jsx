@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 
 import { Button, ButtonGroup, Divider } from '@chakra-ui/react';
+import { AttachmentIcon, ExternalLinkIcon } from '@chakra-ui/icons';
 
 import { CardContainer, SectionContainer } from '@components/layout';
 import { SearchForm } from '@components/forms';
 import { AppTable } from '@components/tables';
 
-import { SizesConstants } from '@utils/constants';
+import { SizesConstants, LabelsConstants } from '@utils/constants';
 
 const tableConfig = {
     columns: [ 'Numero', 'Descripcion', 'Cantidad', 'Total' ],
@@ -54,7 +55,7 @@ export const InvoicesPage = () => {
     };
 
     return (
-        <SectionContainer title={ 'Registro de Facturas' }>
+        <SectionContainer title={ LabelsConstants.registroFacturas }>
             <CardContainer maxWidth={ SizesConstants.invoicePageCardContainer }>
                 <ButtonGroup
                     variant='outline'
@@ -64,8 +65,22 @@ export const InvoicesPage = () => {
                     justifyContent='right'
                     w='100%'
                 >
-                    <Button colorScheme='blue' variant='solid' onClick={ exportHandler }>Exportar</Button>
-                    <Button colorScheme='blue' variant='solid' onClick={ shareHandler }>Compartir</Button>
+                    <Button
+                        colorScheme='blue'
+                        variant='solid'
+                        onClick={ exportHandler }
+                        leftIcon={ <AttachmentIcon/> }
+                    >
+                        { LabelsConstants.exportar }
+                    </Button>
+                    <Button
+                        colorScheme='blue'
+                        variant='solid'
+                        onClick={ shareHandler }
+                        leftIcon={ <ExternalLinkIcon/> }
+                    >
+                        { LabelsConstants.compartir }
+                    </Button>
                 </ButtonGroup>
 
                 <Divider/>
